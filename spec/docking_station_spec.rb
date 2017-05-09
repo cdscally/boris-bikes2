@@ -9,7 +9,11 @@ end
 
 describe DockingStation do
   it "docking station to release bike" do
-    instance = DockingStation.new
-    expect(instance.release_bike).to be_an_instance_of(Bike)
+    # instance = DockingStation.new
+    #expect(instance.release_bike).to be_an_instance_of(Bike)
+    expect(subject.release_bike).to be_working
   end
+#   it "returns true if bike working" do
+#
+#   end
 end
