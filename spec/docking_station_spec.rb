@@ -1,19 +1,24 @@
 require 'docking_station'
 
 describe DockingStation do
-  # it "docking station to release_bike" do
-  #   expect(subject).to respond_to :release_bike
-  # end
   it { is_expected.to respond_to :release_bike}
 end
 
 describe DockingStation do
   it "docking station to release bike" do
-    # instance = DockingStation.new
-    #expect(instance.release_bike).to be_an_instance_of(Bike)
     expect(subject.release_bike).to be_working
   end
-#   it "returns true if bike working" do
-#
-#   end
+  it { is_expected.to respond_to(:dock_bike).with(1).argument}
+  it { is_expected.to respond_to(:bike)}
+
+  it "docks something" do
+    bike = Bike.new
+    expect(subject.dock_bike(bike)).to eq bike
+  end
+
+  it "returns bikes at dock station" do
+    bike = Bike.new
+    subject.dock_bike(bike)
+    expect(subject.bike).to eq bike
+  end
 end
